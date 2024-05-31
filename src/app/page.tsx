@@ -4,14 +4,14 @@ export default function Home() {
   return (
     <main className="p-2">
       <div className="flex justify-center">
-        <Image src="/logo.jpg" width="200" height="200" alt="" />
+        <Image src="./logo.jpg" width="200" height="200" alt="" />
       </div>
       <div id="classic-cakes" className="py-3">
         <h1 className="text-[#3752aa] text-lg py-4">Classic Cakes</h1>
         <div className="flex carousel carousel-center space-x-4">
           <div className="carousel-item flex-col">
             <Image
-              src="/classic/vanila.png"
+              src="./classic/vanila.png"
               className="rounded-box"
               alt=""
               width={200}
@@ -22,7 +22,7 @@ export default function Home() {
           </div>
           <div className="carousel-item flex-col">
             <Image
-              src="/classic/chocolate.png"
+              src="./classic/chocolate.png"
               className="rounded-box"
               alt=""
               width={360}
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
           <div className="carousel-item flex-col">
             <Image
-              src="/classic/white-truffle.png"
+              src="./classic/white-truffle.png"
               className="rounded-box"
               alt=""
               width={270}
