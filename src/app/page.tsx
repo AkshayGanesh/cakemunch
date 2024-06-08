@@ -1,60 +1,138 @@
 import Image from "next/image";
+import EdibleItem from "./components/item";
 
 export default function Home() {
+  const classicCakes = [
+    {
+      filePath: "/classic/Fresh Strawberry Cake.png",
+      itemName: "Fresh Strawberry Cake",
+    },
+    {
+      filePath: "/classic/Butterscotch Cake.png",
+      itemName: "Butterscotch Cake",
+    },
+    {
+      filePath: "/classic/Kitkat Gems Cake.png",
+      itemName: "Kitkat Gems Cake",
+    },
+    {
+      filePath: "/classic/Blue Velvet Cake.png",
+      itemName: "Blue Velvet Cake",
+    },
+    {
+      filePath: "/classic/Nutella Cake.png",
+      itemName: "Nutella Cake",
+    },
+    {
+      filePath: "/classic/Red Velvet.png",
+      itemName: "Red Velvet",
+    },
+    {
+      filePath: "/classic/white-truffle.png",
+      itemName: "White Truffle Cake",
+    },
+    {
+      filePath: "/classic/Pistachio Praline Cake.png",
+      itemName: "Pistachio Praline Cake",
+    },
+    {
+      filePath: "/classic/Salted Caramel Cake.png",
+      itemName: "Salted Caramel Cake",
+    },
+    {
+      filePath: "/classic/Fresh Pineapple Cake.png",
+      itemName: "Fresh Pineapple Cake",
+    },
+    {
+      filePath: "/classic/Blueberry Cake.png",
+      itemName: "Blueberry Cake",
+    },
+    {
+      filePath: "/classic/chocolate.png",
+      itemName: "Chocolate Cake",
+    },
+    {
+      filePath: "/classic/vanila.png",
+      itemName: "Vanila Cake",
+    },
+    {
+      filePath: "/classic/Oreo Cake.png",
+      itemName: "Oreo Cake",
+    },
+  ];
+
+  const dreamCakes = [
+    {
+      filePath: "/dream/chocolate-dream.png",
+      itemName: "Chocolate Cake",
+    },
+    {
+      filePath: "/dream/White chocolate dream cake.png",
+      itemName: "White Chocolate Cake",
+    },
+  ];
+
+  const themedCakes = [
+    {
+      filePath: "/themed/Dinosaur-Themed-Cake.jpeg",
+      itemName: "Dinosaur Themed Cake",
+    },
+  ];
   return (
     <main className="p-2">
       <div className="flex justify-center">
         <Image src="/logo.jpg" width="200" height="200" alt="" />
       </div>
       <div id="classic-cakes" className="py-3">
-        <h1 className="text-[#3752aa] text-lg py-4">Classic Cakes</h1>
-        <div className="flex carousel carousel-center space-x-4">
-          <div className="carousel-item flex-col">
-            <Image
-              src="/classic/vanila.png"
-              className="rounded-box"
-              alt=""
-              width={200}
-              height={200}
+        <h1 className="text-[#3752aa] text-2xl py-4">Classic Cakes</h1>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {classicCakes.map((item, index) => (
+            <EdibleItem
+              key={index}
+              filePath={item.filePath}
+              itemName={item.itemName}
+              cakeType="Classic Cake"
             />
-            <h5 className="text-[#3752aa] text-sm">Vanilla Cake</h5>
-            <h5 className="text-[#3752aa] text-sm">Rs 710/-</h5>
-          </div>
-          <div className="carousel-item flex-col">
-            <Image
-              src="/classic/chocolate.png"
-              className="rounded-box"
-              alt=""
-              width={360}
-              height={350}
-            />
-            <h5 className="text-[#3752aa] text-sm">Chocolate Cake</h5>
-            <h5 className="text-[#3752aa] text-sm">Rs 780/-</h5>
-          </div>
-          <div className="carousel-item flex-col">
-            <Image
-              src="/classic/white-truffle.png"
-              className="rounded-box"
-              alt=""
-              width={270}
-              height={350}
-            />
-            <h5 className="text-[#3752aa] text-sm">White Truffle</h5>
-            <h5 className="text-[#3752aa] text-sm">Rs 850/-</h5>
-          </div>
+          ))}
         </div>
       </div>
-      <footer className="footer items-center p-1 bg-neutral text-neutral-content">
-        <aside className="items-center grid-flow-col">
-          <p>
-            For orders, DM us at Whatsapp or Instagram <br />
-            Or call us at{" "}
-            <a href="tel:+91-9995565933" className="underline-offset-auto">
-              +91-9995565933
-            </a>
-          </p>
-        </aside>
-        <nav className="grid-flow-col gap-1 md:place-self-center md:justify-self-end">
+
+      <div id="dream-cakes" className="py-3">
+        <h1 className="text-[#3752aa] text-2xl py-4">Dream Cakes</h1>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {dreamCakes.map((item, index) => (
+            <EdibleItem
+              key={index}
+              filePath={item.filePath}
+              itemName={item.itemName}
+              cakeType="Dream Cake"
+            />
+          ))}
+        </div>
+      </div>
+
+      <div id="themed-cakes" className="py-3">
+        <h1 className="text-[#3752aa] text-2xl py-4">Themed Cakes</h1>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {themedCakes.map((item, index) => (
+            <EdibleItem
+              key={index}
+              filePath={item.filePath}
+              itemName={item.itemName}
+              cakeType="Themed Cake"
+            />
+          ))}
+        </div>
+      </div>
+      <div className="sticky bottom-0 items-center p-1 bg-[#FEFEF2] text-neutral-content  grid-flow-col">
+        <p>
+          For orders, DM us at Whatsapp or Instagram <br />
+          Or call us at{" "}
+          <a href="tel:+91-9995565933" className="underline-offset-auto">
+            +91-9995565933
+          </a>
+        </p>
+        <div className="flex gap-1 md:place-self-center md:justify-self-end">
           <a href="https://wa.me/+919995565933">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -188,8 +266,8 @@ export default function Home() {
               </g>
             </svg>
           </a>
-        </nav>
-      </footer>
+        </div>
+      </div>
     </main>
   );
 }
